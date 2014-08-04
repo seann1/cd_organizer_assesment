@@ -38,5 +38,4 @@ class Cd_organizer
     end
     main_menu
   end
-
 end

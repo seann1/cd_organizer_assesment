@@ -53,6 +53,20 @@ end
     Cd_organizer.add_cd(user_artist, user_album)
   end
 
+  def add_album
+    puts "which artist would you like to add an album for?"
+    user_artist = gets.chomp
+    Cd_organizer.all.each_with_index do |item, index|
+      if item.artist == user_artist
+        puts "Enter album name"
+        user_album = gets.chomp
+        album = Album.new(user_album)
+        item.albums << album
+        puts "#{user_album} was added for #{item.artist}"
+      end
+    end
+  end
+
   def search_artists
     puts "What artist would you like to search for?"
     user_choice = gets.chomp
