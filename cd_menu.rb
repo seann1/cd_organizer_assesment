@@ -53,8 +53,11 @@ end
     Cd_organizer.add_cd(user_artist, user_album)
   end
 
-
-
-
+  def search_artists
+    puts "What artist would you like to search for?"
+    user_choice = gets.chomp
+    puts "\n"
+    Cd_organizer.search_artist(user_choice)
+  end
 
   main_menu
