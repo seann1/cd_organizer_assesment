@@ -6,7 +6,7 @@ require 'album'
 describe "Cd_organizer" do
   before  do
     Cd_organizer.clear
-end
+  end
 
   describe "initialize" do
     it "creates an empty array when a new class is created" do
@@ -25,22 +25,29 @@ end
       expect(Cd_organizer.all[0].albums.length).to eq(1)
     end
   end
-end
 
-describe "Artist" do
-  describe "initialize" do
-    it "is initialized with a name and an empty albums array" do
-      new_artist = Artist.new("prince")
-      expect(new_artist.albums).to eq ([])
+  describe "Cd_organizer.display_artists" do
+    it "displays all artists in all_artists array" do
+      Cd_organizer.add_cd("prince", "thriller")
+      expect(Cd_organizer.display_artists.length).to eq(1)
     end
   end
-end
 
-describe "Album" do
-  describe "initialize" do
-    it "is initialized with a name" do
-      new_album = Album.new("thriller")
-      expect(new_album.name).to eq ("thriller")
+  describe "Artist" do
+    describe "initialize" do
+      it "is initialized with a name and an empty albums array" do
+        new_artist = Artist.new("prince")
+        expect(new_artist.albums).to eq ([])
+      end
+    end
+  end
+
+  describe "Album" do
+    describe "initialize" do
+      it "is initialized with a name" do
+        new_album = Album.new("thriller")
+        expect(new_album.name).to eq ("thriller")
+      end
     end
   end
 end
