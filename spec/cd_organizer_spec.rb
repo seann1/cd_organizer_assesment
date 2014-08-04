@@ -14,6 +14,17 @@ end
       expect(Cd_organizer.all).to eq ([])
     end
   end
+
+  describe "Cd_organizer.add_cd" do
+    it "creates a new instance of Artist and Album and pushes artist into all_artists array" do
+      Cd_organizer.add_cd("prince", "thriller")
+      expect(Cd_organizer.all.length).to eq(1)
+    end
+    it "pushes album into Artist's albums array" do
+      Cd_organizer.add_cd("prince", "thriller")
+      expect(Cd_organizer.all[0].albums.length).to eq(1)
+    end
+  end
 end
 
 describe "Artist" do
